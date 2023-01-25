@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, {{ name }}!
+</h1>
+{% if voter%}
+  <h1 class="subtitle has-text-white"> Your vote has been cast.</h1>
+  
+{%else%}
+  <h2 class="subtitle">
+      You can cast your vote here.<br>
+  </h2>
+  <div class="columns">
+      <div class="column is-2">
+        <img src="static/images/me.jpg">
+      </div>
+      <div class="column is-8 ">
+        
+        <div class="box">
+        <h3 class="title has-text-info">Voting Form</h3>
+
+        Do take a look at the <a href="{{ url_for('candidate') }}"><u>candidates</u> </a> standing in the election before casting your vote.
+        <br> <br>
+
+        <form method="POST" action="/profile">
+          <div class="field ">
+            <label class="label">President</label>
+            <div class="select" >
+              <select name="president">
+                {% for prez in prez %}
+                    <option value ={{prez.roll_num}}>{{prez.first_name}} {{prez.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Vice-President</label>
+            <div class="select" >
+              <select name="vice-president">
+                {% for vice in vice %}
+                <option value ={{vice.roll_num}}>{{vice.first_name}} {{vice.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="field ">
+            <label class="label">Secretary-General</label>
+            <div class="select" >
+              <select name="secretary-general">
+                {% for sec_gen in sec_gen %}
+                    <option value ={{sec_gen.roll_num}}>{{sec_gen.first_name}} {{sec_gen.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+
+          <div class="field ">
+            <label class="label">Treasurer</label>
+            <div class="select" >
+              <select name="tresurer">
+                {% for trez in trez %}
+                    <option value ={{trez.roll_num}}>{{trez.first_name}} {{trez.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="field ">
+            <label class="label">Financial-Secretary</label>
+            <div class="select" >
+              <select name="financial-secretary">
+                {% for fin_sec in fin_sec %}
+                    <option value ={{fin_sec.roll_num}}>{{fin_sec.first_name}} {{fin_sec.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="field">
+            <button class="button is-large is-info">Cast Vote</button>
+          </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="column is-2">
+      <img src="static/images/4.jpg">
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}

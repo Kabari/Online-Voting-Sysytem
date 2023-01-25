@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero has-background-white-ter is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12 ">
+          <h1 class="title has-text-info">
+            Candidate Information
+          </h1>
+          <h2 class="subtitle is-5 has-text-dark has-text-centered has-text-weight-bold">
+            Information on which candidates are standing for election <br>
+            and what the key messages of their campaign are.
+          </h2>
+          <br>
+          <br>
+          <div class="column id-9">
+            <h1 class="title has-text-info">Presidential Candidates</h1>
+            <br>
+            <div class="tile is-ancestor ">
+              {% for prez in prez %}
+              {% if not prez.last_name == 'Vote'%}
+
+              <div class="tile is-parent">
+                <article class="tile is-child box notification is-white">
+                  <h1 class="title is-5 has-text-dark">{{ prez.first_name }} {{ prez.last_name }}</h1>
+                  <p class="subtitle is-3 has-text-dark">{{prez.roll_num}}</p>
+                  <p class="title is-5 has-text-dark is-italic">"{{prez.agenda}}"</p>
+                  <figure class="image">
+                    <img class="is-rounded" src="{{ prez.pic_path}}">
+                  </figure>
+                  <br>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{prez.batch}}</p>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{prez.course}}, {{prez.department}}</p>
+                </article>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+            <br>
+            <br>
+
+            <h1 class="title has-text-info">Vice-Presidential Candidates</h1>
+            <br>
+            <div class="tile is-ancestor ">
+              {% for vice in vice %}
+              {% if not vice.last_name == 'Vote'%}
+
+              <div class="tile is-parent">
+                <article class="tile is-child box notification is-white">
+                  <h1 class="title is-5 has-text-dark">{{ vice.first_name }} {{ vice.last_name }}</h1>
+                  <p class="subtitle is-3 has-text-dark">{{vice.roll_num}}</p>
+                  <p class="title is-5 has-text-dark is-italic"> "{{vice.agenda}}"</p>
+                  <figure class="image">
+                    <img class="is-rounded" src="{{ vice.pic_path}}">
+                  </figure>
+                  <br>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{vice.batch}}</p>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{vice.course}}, {{vice.department}}</p>
+                </article>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+            <br>
+            <br>
+
+            <h1 class="title has-text-info">Secretary-General Candidates</h1>
+            <br>
+            <div class="tile is-ancestor ">
+              {% for sec_gen in sec_gen %}
+              {% if not sec_gen.last_name == 'Vote'%}
+
+              <div class="tile is-parent">
+                <article class="tile is-child box notification is-white">
+                  <h1 class="title is-5 has-text-dark">{{ sec_gen.first_name }} {{ sec_gen.last_name }}</h1>
+                  <p class="subtitle is-3 has-text-dark">{{sec_gen.roll_num}}</p>
+                  <p class="title is-5 has-text-dark is-italic"> "{{sec_gen.agenda}}"</p>
+                  <figure class="image">
+                    <img class="is-rounded" src="{{ sec_gen.pic_path}}">
+                  </figure>
+                  <br>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{sec_gen.batch}}</p>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{sec_gen.course}}, {{sec_gen.department}}</p>
+                </article>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+            <br>
+            <br>
+
+            <h1 class="title has-text-info">Treasurer Candidates</h1>
+            <br>
+            <div class="tile is-ancestor ">
+              {% for trez in trez %}
+              {% if not trez.last_name == 'Vote'%}
+
+              <div class="tile is-parent">
+                <article class="tile is-child box notification is-white">
+                  <h1 class="title is-5 has-text-dark">{{ trez.first_name }} {{ trez.last_name }}</h1>
+                  <p class="subtitle is-3 has-text-dark">{{trez.roll_num}}</p>
+                  <p class="title is-5 has-text-dark is-italic"> "{{trez.agenda}}"</p>
+                  <figure class="image">
+                    <img class="is-rounded" src="{{ trez.pic_path}}">
+                  </figure>
+                  <br>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{trez.batch}}</p>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{trez.course}}, {{trez.department}}</p>
+                </article>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+            <br>
+            <br>
+
+            <h1 class="title has-text-info">Financial-Secretary Candidates</h1>
+            <br>
+            <div class="tile is-ancestor ">
+              {% for fin_sec in fin_sec %}
+              {% if not fin_sec.last_name == 'Vote'%}
+
+              <div class="tile is-parent">
+                <article class="tile is-child box notification is-white">
+                  <h1 class="title is-5 has-text-dark">{{ fin_sec.first_name }} {{ fin_sec.last_name }}</h1>
+                  <p class="subtitle is-3 has-text-dark">{{fin_sec.roll_num}}</p>
+                  <p class="title is-5 has-text-dark is-italic"> "{{fin_sec.agenda}}"</p>
+                  <figure class="image">
+                    <img class="is-rounded" src="{{ fin_sec.pic_path}}">
+                  </figure>
+                  <br>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{fin_sec.batch}}</p>
+                  <p class="subtitle has-text-dark has-text-weight-semibold">{{fin_sec.course}}, {{fin_sec.department}}</p>
+                </article>
+              </div>
+
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+
+
+
+    {% endblock %}
